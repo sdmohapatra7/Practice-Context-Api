@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { ColorContext } from '../ContextApi/ColorContext';
 
-export default function GrandChildComponent(props) {
+export default function GrandChildComponent() {
+    const color = useContext(ColorContext);
     return (
-        <p style={{ color: props.color }}>Color: {props.color}</p>
+        <p style={{ color: color }}>Color: {color}</p>
     )
 }

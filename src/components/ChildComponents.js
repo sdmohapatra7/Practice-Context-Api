@@ -1,7 +1,7 @@
 import React from 'react';
 import GrandChildComponent from './GrandChildComponent';
 
-export default function ChildComponents(props) {
+export default function ChildComponents() {
     return (
         <div style={{
             border: '10px solid #000000',
@@ -10,7 +10,7 @@ export default function ChildComponents(props) {
             fontSize: '30px',
             width: '300px'
         }}>
-            <GrandChildComponent color={props.color} />
+            <GrandChildComponent  />
         </div>
     )
 }

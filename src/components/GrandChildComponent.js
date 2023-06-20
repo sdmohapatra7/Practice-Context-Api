@@ -1,9 +1,13 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { ColorContext } from '../ContextApi/ColorContext';
 
 export default function GrandChildComponent() {
-    const color = useContext(ColorContext);
+    
     return (
-        <p style={{ color: color }}>Color: {color}</p>
+        <ColorContext.Consumer>
+        {/* consumer require a callback function */}
+        {(value)=><p style={{ color: value.color }}>Color: {value.color}</p>}
+        </ColorContext.Consumer>
+        
     )
 }

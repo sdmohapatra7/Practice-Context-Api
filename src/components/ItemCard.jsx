@@ -4,7 +4,7 @@ import styles from "../styles/ItemCard.module.css";
 // import { ItemContext } from "../ContextApi/ItemContext";
 import { useValue } from "../ContextApi/ItemContext";
 
-function ItemCard({ name, price }) {
+function ItemCard({ id,name, price }) {
   // const {total,setTotal} = useContext(TotalContext);
   const {handleAdd,handleRemove} = useValue();
   // const handleAdd = () => {
@@ -25,10 +25,10 @@ function ItemCard({ name, price }) {
       <div className={styles.itemName}>{name}</div>
       <div className={styles.itemPrice}>&#x20B9; {price}</div>
       <div className={styles.itemButtonsWrapper}>
-        <button className={styles.itemButton} onClick={() => handleAdd(price)}>
+        <button className={styles.itemButton} onClick={() => handleAdd({price,name,id})}>
           Add
         </button>
-        <button className={styles.itemButton} onClick={() => handleRemove(price)}>
+        <button className={styles.itemButton} onClick={() => handleRemove(id)}>
           Remove
         </button>
       </div>

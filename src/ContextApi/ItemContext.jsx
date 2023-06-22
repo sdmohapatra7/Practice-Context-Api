@@ -22,9 +22,14 @@ function CustomItemContext({ children }) {
         setTotal((prevState) => prevState - price);
         setItem(item - 1);
     };
+    const handleClear = ()=>{
+        setItem(0);
+        setTotal(0);
+    }
+
 
     return (
-        <ItemContext.Provider value={{ total, handleAdd, item,handleRemove }}>
+        <ItemContext.Provider value={{ total, handleAdd, item,handleRemove,handleClear }}>
             {children}
         </ItemContext.Provider>
     );
